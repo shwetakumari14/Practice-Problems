@@ -37,7 +37,7 @@ func maxDifference(arr []int) int {
 //Case2: arr[j]-arr[i] + i - j --> arr[j] - j - (arr[i] - i)
 func maxDifferenceOptimized(arr []int) int {
 
-	max1, min1, max2, min2 := -100000000, 1000000000, -1000000000, 1000000000
+	max1, min1, max2, min2 := math.MinInt, math.MaxInt, math.MinInt, math.MaxInt
 
 	for i := 0; i < len(arr); i++ {
 		if max1 < arr[i]+i {

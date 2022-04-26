@@ -17,7 +17,7 @@ class Solution:
         for i in range(1, len(arr)):
             left[i] = gcd(left[i-1], arr[i])
 
-        for i in range(len(arr)-2, 0):
+        for i in range(len(arr)-2, -1, -1):
             right[i] = gcd(right[i+1], arr[i])
 
         for i in range(len(arr)):

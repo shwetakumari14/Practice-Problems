@@ -1,6 +1,3 @@
-import re
-
-
 class Solution:
     def peakElement(self, arr):
         if len(arr)==1:
@@ -17,7 +14,7 @@ class Solution:
         while low <= high:
             mid = low + (high-low)//2
 
-            if arr[mid]>=arr[mid-1] and arr[mid] >= arr[mid-1]:
+            if arr[mid]>=arr[mid-1] and arr[mid] >= arr[mid+1]:
                 return arr[mid]
             elif arr[mid] > arr[mid-1]:
                 low = mid + 1

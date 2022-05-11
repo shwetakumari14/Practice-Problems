@@ -1,5 +1,5 @@
 class Solution:
-    def findElementInRotatedArray(self, arr):
+    def findElementInRotatedArray(self, arr, b):
         low, high = 0, len(arr)-1
 
         while low < high:
@@ -22,5 +22,5 @@ class Solution:
 
 obj = Solution()
 arr, b = [4, 5, 6, 7, 0, 1, 2, 3], 2
-ans = obj.findElementInRotatedArray(arr)
+ans = obj.findElementInRotatedArray(arr, b)
 print(ans)

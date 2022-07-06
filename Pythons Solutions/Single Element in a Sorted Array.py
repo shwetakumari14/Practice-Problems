@@ -13,13 +13,13 @@ class Solution:
                 low = mid+1
             else:
                 high = mid
-
         
-        if arr[low] == arr[low+1]:
-            return arr[high]
+        if low + 1 < len(arr):
+            if arr[low] == arr[low+1]:
+                return arr[high]
         return arr[low]
 
 obj = Solution()
-arr = [1, 1, 2, 3, 3, 4, 4]
+arr = [1, 1, 2, 2, 3]
 ans = obj.findSingleElement(arr)
 print(ans)

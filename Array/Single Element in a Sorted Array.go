@@ -24,8 +24,10 @@ func findSingleElement(arr []int) int {
 		}
 	}
 
-	if arr[low] == arr[low+1] {
-		return arr[high]
+	if low+1 < len(arr) {
+		if arr[low] == arr[low+1] {
+			return arr[high]
+		}
 	}
 	return arr[low]
 }

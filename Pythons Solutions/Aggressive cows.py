@@ -1,28 +1,26 @@
 class Solution:
-    def aggressiveCows(self, arr, b):
-        arr.sort()
-        left, right, ans = 1, arr[len(arr)-1], 0
+    def check(self, x, arr, b):
+        n, j, cnt = len(arr), 0, 1
 
-        while left <= right:
-            mid = left + (right+left)//2
-            if self.isPossible(mid, arr, b):
-                ans = mid
-                left = mid + 1
-            else:
-                right = mid - 1
-
-        
-        return ans
-    
-    def isPossible(self, x, arr, c):
-        j, count = 0, 1
-
-        for i in range(len(arr)):
+        for i in range(1, n):
             if arr[i] - arr[j] >= x:
                 j = i
-                count += 1
+                cnt += 1
+        return cnt >= b
+
+
+    def aggressiveCows(self, arr, b):
+        low, high, ans = 0, 1e9, 1
+
+        while low <= high:
+            mid = int(low + (high - low)//2)
+            if self.check(mid, arr, b):
+                ans = mid
+                low = mid + 1
+            else:
+                high = mid - 1
         
-        return count >= c
+        return ans
 
 obj = Solution()
 arr, b = [1, 2, 3, 4, 5], 3
